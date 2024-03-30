@@ -1,5 +1,5 @@
    <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-       <a href="{{route('dashboard.index')}}" class="navbar-brand d-flex d-lg-none me-4">
+       <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
            <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
        </a>
        <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -78,7 +78,7 @@
                    <span class="d-none d-lg-inline-flex">{{Auth::user()->name}}</span>
                </a>
                <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                   <a href="{{route('profile.edit')}}" class="dropdown-item">My Profile</a>
+                   <a href="{{route('profile.update')}}" class="dropdown-item">My Profile</a>
                    <a href="#" class="dropdown-item">Settings</a>
                    <a href="#" class="dropdown-item" id="logoutLink">Log Out</a>
                </div>
@@ -99,7 +99,7 @@
                    })
                .then(response => {
                    // Redirect to the desired location after successful logout
-                   window.location.href = '{{ route('login') }}';
+                   window.location.href = '{{ url('/') }}';
                })
                .catch(error => {
                    console.error('Logout error:', error);
